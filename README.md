@@ -91,7 +91,7 @@ In the above example, at 100px wide, technically all the media query conditions 
 
 [Learn CSS Flexbox with Flexbox Froggy](https://flexboxfroggy.com/)
 
-[Free CSS Grid course from Wes Bos] https://cssgrid.io/
+[Free CSS Grid course from Wes Bos](https://cssgrid.io/)
 
 # Bootstrap CSS Framework
 
