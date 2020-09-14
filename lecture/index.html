@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced JavaScript</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Open Sans'; }
+      h1, h2, h3 {
+        font-family: 'Open Sans';
+        font-weight: normal;
+      }
+
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+      .tr-theme-defaults {
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#eeeeee+0,cccccc+100;Gren+3D */
+        background: #eeeeee; /* Old browsers */
+        background: -moz-linear-gradient(top,  #eeeeee 0%, #cccccc 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  #eeeeee 0%,#cccccc 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  #eeeeee 0%,#cccccc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+        color: #451a6d;
+      }
+
+      .title-area {
+        padding-bottom: 10px;
+      }
+
+      .tr-logo {
+        float: right;
+        margin-top: -30px;
+      }
+
+      .center img {
+        width: 80%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, tr-theme-defaults
+
+# Responsive Design and Grid Layouts
+
+---
+
+class: tr-theme-defaults
+layout: true
+
+.title-area[
+  .tr-logo[![Tech Returners Logo](./images/tr_logo_purple.png)]
+
+  ### {{slide-title}}
+]
+
+---
+slide-title: Group Project - Homework
+- Wireframe or prototype
+
+.center[![Cols](./images/narrow_to_do.jpg)]
+---
+
+slide-title: Aims
+
+- To know what Responsive Design is
+- To know how to use Media Queries to apply different styles depending on conditions
+- To be familiar with some of Chrome's developer tools which can assist in designing responsively
+- To understand what a CSS framework is
+- To be able to create a responsive grid layout using a CSS framework
+
+---
+
+slide-title: What do we mean by ‘Responsive Design’ ?
+
+---
+
+slide-title: What do we mean by ‘Responsive Design’ ?
+
+
+- How people consume internet pages completely changed overnight with the creation of the iPhone
+
+- The variety of devices that can now ‘browse the web’ includes tablets, phones, microwaves, fridges, televisions etc etc
+
+- It meant that the web pages had to be re-thought for a variety of screen sizes and consumers
+
+---
+
+slide-title: What do we mean by ‘Responsive Design’ ?
+
+Responsive design is allowing your website to "respond" to the screen it is currently displayed on.
+
+Best observed with an example:
+
+- BBC in 2003 - https://web.archive.org/web/20031101000000*/www.bbc.co.uk
+
+- BBC in 2018 - https://web.archive.org/web/20180601000000*/www.bbc.co.uk
+
+Much of ‘being responsive’ is actually achieved with CSS
+
+---
+
+slide-title: Introducing the CSS Media Query
+
+- A media query is a piece of CSS that ONLY gets applied if a condition is met
+
+- One of the early uses was to allow developers to apply different styles when the document was being rendered for **print**
+
+```css
+
+@media only screen and (min-width: 1000px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+```
+
+---
+
+slide-title: Applying multiple media queries
+
+- Let's add a media query for the condition `min-width: 1000px` wide and change the background colour
+
+- Add more media queries, for page widths of 800, 600, 400, and 200px. Give each one a different background colour.
+
+- At width 500px, which media query conditions match? Which one is applied?
+
+---
+
+slide-title: Task
+
+- Hide an element on a "mobile" (narrow) screen width
+
+- (Hint: the CSS property 'display' may be helpful here!)
+
+---
+
+slide-title: Creating a grid layout
+
+- 12 column layout
+
+- Columns are defined by fractions of this 12 column grid
+
+---
+
+slide-title: How can we achieve a grid layout?
+
+- CSS Grid (most modern, not supported in all browsers)
+- CSS Flexbox (modern, generally widely supported in browsers)
+- CSS table layout (old school - not recommended!)
+
+Frameworks:
+- Bootstrap
+- Material UI
+- Bulma
+- Semantic UI
+
+---
+
+slide-title: What is a CSS Framework?
+
+- CSS that someone else has written
+
+- It's just a CSS file!
+
+- You just need to use the correct classes and markup
+
+---
+
+
+slide-title: Introducing Bootstrap
+
+- A CSS Framework originally created by Developers at Twitter
+
+- [https://getbootstrap.com/](https://getbootstrap.com/)
+
+- Responsive is built-in
+
+- Components and layout (12-column grid system)
+
+---
+
+slide-title: Bootstrap Grid system
+
+- Containers, Rows and Cols
+
+- Bootstrap includes a responsive, mobile first fluid grid system that lets you split the screen up into 12 columns and lets you customise the size of your HTML element as a fraction of 12.
+
+- It uses a series of containers, rows and columns to lay out and align content.
+
+.center[![Cols](./images/cols.png)]
+
+---
+
+slide-title: Boostrap Grid system
+
+- Bootstrap makes it easy to center content on your page and provide sensible page margins. To do this we make use of the container class.
+
+```html
+<body>
+  <div class="container">
+
+  </div>
+</body>
+```
+
+---
+
+slide-title: Boostrap Grid system
+
+- Bootstrap works on a grid layout, with 12 columns that make up the page. 
+
+- If you do not want to use all 12 columns individually, you can group the columns together to create wider columns
+
+.center[![Cols](./images/12.png)]
+
+---
+
+slide-title: Boostrap Grid system
+
+- We can decide how many columns we want. Columns must live inside a row.
+
+- It helps to draw out our desired layout first
+
+- Let's start with a simple 4-column design
+
+---
+
+slide-title: Boostrap Grid system
+
+.center[![col](./images/4col.png)]
+
+---
+
+slide-title: Boostrap Grid system
+
+```html
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        Some content
+      </div>
+
+      <div class="col-3">
+        Some more content
+      </div>
+
+      <div class="col-3">
+        More text here
+      </div>
+
+      <div class="col-3">
+        Our final column
+      </div>
+    </div>
+  </div>
+</body>
+```
+
+---
+
+slide-title: Multiple rows
+
+Try coding up this layout:
+
+.center[![col](./images/2-rows.png)]
+
+---
+
+slide-title: Multiple rows
+
+```html
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        Some content
+      </div>
+
+      <div class="col-6">
+        Some more content
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        Some content
+      </div>
+
+      <div class="col-6">
+        Some more content
+      </div>
+    </div>
+  </div>
+</body>
+```
+---
+
+slide-title: Nested Columns
+
+.center[![col](./images/nested-cols.png)]
+
+---
+
+slide-title: Responsive Design with Bootstrap
+
+- Bootstrap is Mobile first
+
+- The column widths will be applied to **mobile and any sizes above**
+
+- We need to think: "How should the layout look on mobile, and how should it change when the screen gets bigger?"
+
+- This question will help us figure out what row/column structure we want.
+
+---
+
+slide-title: Responsive Design with Bootstrap
+
+.center[![col](./images/mobile-view.png)]
+
+---
+slide-title: Responsive Design with Bootstrap
+
+.center[![col](./images/tablet-view.png)]
+
+---
+
+slide-title: Responsive Design with Bootstrap
+
+- Bootstrap considers an "extra small screen" to be  less than 576px and an "extra large screen" to be  greater than 1200px
+
+.center[![col](./images/grid.png)]
+
+---
+
+slide-title: Responsive Design with Bootstrap
+
+
+```html
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-4">
+        Some content
+      </div>
+
+      <div class="col-12 col-sm-4">
+        Some more content
+      </div>
+
+      <div class="col-12 col-sm-4">
+        More text here
+      </div>
+    </div>
+  </div>
+</body>
+```
+
+---
+
+slide-title: Task
+
+- Have a go at creating the below responsive layout. NB, think about how many rows you actually need!
+
+.center[![challenge](./images/challenge.png)]
+
+---
+
+slide-title: Task Solution
+
+```html
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-6 purple-rect">
+        First column
+      </div>
+      <div class="col-12 col-sm-6 purple-rect">
+        Second column
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6 blue-rect">
+        Always a 6/12 col
+      </div>
+      <div class="col-6 blue-rect">
+        Always a 6/12 col
+      </div>
+    </div>
+  </div>
+</body>
+```
+---
+
+slide-title: Task Solution
+
+- Note how we have also included our own classes, to allow us to add our own styles
+
+```css
+.purple-rect {
+  height: 200px;
+  background-color: plum;
+  border: 1px solid lightcoral;
+}
+
+.blue-rect {
+  height: 200px;
+  background-color: lightcyan;
+  border: 1px solid lightcoral;
+}
+```
+
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create({
+        highlightStyle: 'monokai'
+      });
+    </script>
+  </body>
+</html>
